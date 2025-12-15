@@ -1,0 +1,29 @@
+{
+  "name": "wvlet-skills",
+  "owner": {
+    "name": "wvlet",
+    "url": "https://github.com/wvlet"
+  },
+  "metadata": {
+    "description": "Skills for Airframe ecosystem and Wvlet query language",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "airframe-skills",
+      "source": "./plugins/airframe-skills",
+      "description": "Skills for Airframe ecosystem: AirSpec testing, dependency injection, and logging",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "keywords": ["airframe", "airspec", "scala", "testing", "dependency-injection", "logging"]
+    },
+    {
+      "name": "wvlet-skills",
+      "source": "./plugins/wvlet-skills",
+      "description": "Skills for Wvlet flow-style query language",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "keywords": ["wvlet", "query", "sql", "data"]
+    }
+  ]
+}

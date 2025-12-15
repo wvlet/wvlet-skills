@@ -1,0 +1,13 @@
+{
+  "name": "airframe-skills",
+  "version": "1.0.0",
+  "description": "Skills for Airframe ecosystem: AirSpec testing, dependency injection, and logging",
+  "author": {
+    "name": "wvlet",
+    "url": "https://github.com/wvlet"
+  },
+  "homepage": "https://wvlet.org/airframe/",
+  "repository": "https://github.com/wvlet/skills",
+  "license": "Apache-2.0",
+  "keywords": ["airframe", "airspec", "scala", "testing", "dependency-injection", "logging"]
+}
