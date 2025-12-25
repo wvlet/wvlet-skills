@@ -27,6 +27,8 @@ limit 10
 from table_name           -- Table
 from 'file.parquet'       -- File
 show tables               -- List tables
+show schemas              -- List schemas
+describe users            -- Show table schema
 ```
 
 ## Subqueries
@@ -47,7 +49,11 @@ from active_orders
 ```sql
 from orders
 where status = 'active'
-where amount > 100        -- Multiple where clauses allowed
+where amount > 100              -- Multiple where clauses allowed
+where status in ('a', 'b')      -- Membership test
+where age between 18 and 65     -- Range check
+where name like 'J%'            -- Pattern matching
+where deleted_at is null        -- Null check
 ```
 
 ## Column Operations
@@ -72,13 +78,22 @@ agg
   count = _.count,
   avg_amount = amount.avg
 
--- Without grouping
-from orders
-agg total = _.count, unique = _.count_distinct(customer_id)
+-- Additional aggregation functions
+agg
+  unique = _.count_distinct(product_id),
+  items = _.array_agg(name),
+  top_product = product_id.max_by(amount)   -- product_id with max amount
 
 -- Standalone count
 from orders
 count
+```
+
+## Dedup
+
+```sql
+from events
+dedup                     -- Remove duplicate rows
 ```
 
 ## Joins
@@ -87,6 +102,9 @@ count
 from orders
 join customers on orders.customer_id = customers.id
 left join products on orders.product_id = products.id
+right join suppliers on products.supplier_id = suppliers.id
+cross join regions
+asof join prices on orders.ts = prices.ts   -- Time-based join
 ```
 
 ## Sorting and Limiting
@@ -105,16 +123,46 @@ sample 1000              -- Fixed rows
 sample 10 percent        -- Percentage
 ```
 
+## Conditionals (no `end` keyword needed, unlike SQL)
+
+```sql
+-- if expression (NOT if...then...else...end)
+add status_label = if status = 'active' then 'Yes' else 'No'
+
+-- case expression (NOT case...when...then...else...end)
+add grade = case
+  when score >= 90 then 'A'
+  when score >= 80 then 'B'
+  else 'C'
+```
+
 ## Expressions
 
 ```sql
 '2025-01-01'::date                    -- Type casting
 '7 days':interval                     -- Intervals
-if status = 'active' then 'Yes' else 'No'  -- Conditional (no 'end' needed)
-case when score >= 90 then 'A' else 'B'    -- Case expression
 [1, 2, 3]                             -- Array (1-indexed)
 {name: 'John', age: 30}               -- Struct
+map {a: 1, b: 2}                      -- Map
 array.transform(x -> x * 2)           -- Lambda
+`column name`                         -- Identifier with spaces
+```
+
+## String Interpolation and Raw SQL
+
+```sql
+val name = 'wvlet'
+select s"Hello ${name}!" as msg       -- String interpolation
+
+-- Execute raw SQL when needed
+sql"SELECT * FROM legacy_table"
+```
+
+## Unnest Arrays
+
+```sql
+from users
+unnest tags as tag                    -- Expand array to rows
 ```
 
 ## Window Functions
@@ -153,16 +201,25 @@ from wide_table unpivot value for category in (col1, col2, col3)
 val threshold = 100
 from orders where amount > threshold
 
--- String interpolation
-val name = 'wvlet'
-select s"Hello ${name}!" as msg
-
 -- Table variables
 val products(id, name, price) = [
   [1, "Laptop", 999.99],
   [2, "Mouse", 29.99],
 ]
 from products
+```
+
+## Data Modification
+
+```sql
+from transformed_data
+save to new_table                     -- Create/overwrite table
+
+from new_records
+append to existing_table              -- Append to table
+
+from users where inactive = true
+delete                                -- Delete matching rows
 ```
 
 ## Comments
@@ -179,4 +236,5 @@ Trailing commas are allowed in select lists.
 
 ## Reference
 
-https://wvlet.org/wvlet/docs/syntax/
+- Full syntax: https://wvlet.org/wvlet/docs/syntax/
+- See also: [syntax-reference.md](syntax-reference.md) for complete operator/expression tables
