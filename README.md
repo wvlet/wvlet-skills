@@ -28,7 +28,7 @@ Skills for Wvlet query language:
 ### 1. Add the marketplace
 
 ```bash
-/plugin marketplace add wvlet/skills
+/plugin marketplace add wvlet/wvlet-skills
 ```
 
 ### 2. Install plugins
