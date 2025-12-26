@@ -13,6 +13,7 @@ Skills for the Airframe ecosystem:
 | writing-airspec | Write test cases using AirSpec testing framework |
 | using-di | Dependency injection with Airframe DI |
 | logging | Logging with airframe-log |
+| building-rest-http | Build REST HTTP servers with airframe-http |
 
 ### wvlet-skills
 
@@ -51,6 +52,7 @@ Once installed, Claude will automatically use these skills when relevant:
 - Writing Scala tests → `writing-airspec` skill activates
 - Setting up dependency injection → `using-di` skill activates
 - Adding logging → `logging` skill activates
+- Building REST APIs → `building-rest-http` skill activates
 - Writing Wvlet queries → `writing-wvlet` skill activates
 
 ## Resources
