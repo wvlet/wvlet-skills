@@ -14,6 +14,7 @@ Skills for the Airframe ecosystem:
 | using-di | Dependency injection with Airframe DI |
 | logging | Logging with airframe-log |
 | building-rest-http | Build REST HTTP servers with airframe-http |
+| building-rpc | Build RPC servers and clients with airframe-rpc |
 
 ### wvlet-skills
 
@@ -53,6 +54,7 @@ Once installed, Claude will automatically use these skills when relevant:
 - Setting up dependency injection → `using-di` skill activates
 - Adding logging → `logging` skill activates
 - Building REST APIs → `building-rest-http` skill activates
+- Building RPC services → `building-rpc` skill activates
 - Writing Wvlet queries → `writing-wvlet` skill activates
 
 ## Resources
