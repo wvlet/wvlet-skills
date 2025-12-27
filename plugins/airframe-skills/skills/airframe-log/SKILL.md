@@ -1,5 +1,5 @@
 ---
-name: logging
+name: airframe-log
 description: Implements logging using airframe-log for Scala applications. Use when adding logging, configuring log levels, or when the user mentions airframe-log, LogSupport, or logging in Scala.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: writing-airspec
+name: airspec
 description: Writes test cases using AirSpec, a functional testing framework for Scala. Use when writing tests, creating test suites, or when the user mentions AirSpec, unit tests, or test cases in Scala projects.
 ---
 

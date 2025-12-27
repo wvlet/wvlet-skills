@@ -1,5 +1,5 @@
 ---
-name: building-rest-http
+name: airframe-http
 description: Builds REST HTTP servers using airframe-http with Netty backend. Use when creating HTTP endpoints, REST APIs, RPC services, HTTP clients, or when the user mentions airframe-http, web servers, or API development.
 ---
 

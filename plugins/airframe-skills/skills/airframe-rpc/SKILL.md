@@ -1,5 +1,5 @@
 ---
-name: building-rpc
+name: airframe-rpc
 description: Builds RPC servers and clients using Airframe RPC with Netty backend. Use when creating RPC services, defining RPC interfaces, generating RPC clients, or when the user mentions airframe-rpc or remote procedure calls.
 ---
 
