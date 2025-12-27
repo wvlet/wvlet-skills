@@ -9,5 +9,5 @@
   "homepage": "https://wvlet.org/airframe/",
   "repository": "https://github.com/wvlet/skills",
   "license": "Apache-2.0",
-  "keywords": ["airframe", "airspec", "scala", "testing", "dependency-injection", "logging", "http", "rest", "api", "rpc"]
+  "keywords": ["airframe", "airspec", "scala", "testing", "dependency-injection", "logging", "http", "rest", "api", "rpc", "cli", "launcher"]
 }
