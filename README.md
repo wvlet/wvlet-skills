@@ -16,6 +16,7 @@ Skills for the Airframe ecosystem:
 | airframe-http | Build REST HTTP servers with airframe-http |
 | airframe-rpc | Build RPC servers and clients with airframe-rpc |
 | airframe-launcher | Build CLI programs with airframe-launcher |
+| airframe-codec | Serialize objects to JSON/MessagePack with airframe-codec |
 
 ### wvlet-skills
 
@@ -57,6 +58,7 @@ Once installed, Claude will automatically use these skills when relevant:
 - Building REST APIs → `airframe-http` skill activates
 - Building RPC services → `airframe-rpc` skill activates
 - Building CLI programs → `airframe-launcher` skill activates
+- Serializing objects to JSON/MessagePack → `airframe-codec` skill activates
 - Writing Wvlet queries → `writing-wvlet` skill activates
 
 ## Resources
