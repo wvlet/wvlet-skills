@@ -1,5 +1,5 @@
 ---
-name: using-di
+name: airframe-di
 description: Implements dependency injection using Airframe DI for Scala applications. Use when setting up dependency injection, managing object lifecycles, binding implementations, or when the user mentions Airframe DI, Design, or Session.
 ---
 
