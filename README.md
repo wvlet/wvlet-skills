@@ -17,6 +17,7 @@ Skills for the Airframe ecosystem:
 | airframe-rpc | Build RPC servers and clients with airframe-rpc |
 | airframe-launcher | Build CLI programs with airframe-launcher |
 | airframe-codec | Serialize objects to JSON/MessagePack with airframe-codec |
+| airframe-rx-html | Build reactive Web UI in Scala.js with airframe-rx-html |
 
 ### wvlet-skills
 
@@ -59,6 +60,7 @@ Once installed, Claude will automatically use these skills when relevant:
 - Building RPC services → `airframe-rpc` skill activates
 - Building CLI programs → `airframe-launcher` skill activates
 - Serializing objects to JSON/MessagePack → `airframe-codec` skill activates
+- Building reactive Web UI in Scala.js → `airframe-rx-html` skill activates
 - Writing Wvlet queries → `writing-wvlet` skill activates
 
 ## Resources
